@@ -86,7 +86,7 @@ def insert_email(name, email):
 # Write a function named `emails` which finds email addresses by keyword using `GET` and `POST` methods,
 # using template files named `emails.html` given under `templates` folder
 # and assign to the static route of ('/')
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST', 'DELETE'])
 def emails():
     if request.method == 'POST':
         user_name = request.form['user_keyword']
@@ -98,7 +98,7 @@ def emails():
 # Write a function named `add_email` which inserts new email to the database using `GET` and `POST` methods,
 # using template files named `add-email.html` given under `templates` folder
 # and assign to the static route of ('add')
-@app.route('/add', methods=['GET', 'POST'])
+@app.route('/add', methods=['GET', 'POST', 'DELETE'])
 def add_email():
     if request.method == 'POST':
         user_name = request.form['username']
